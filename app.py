@@ -7,27 +7,16 @@ import os
 MODEL_PATH = "butterfly_model_94_44acc.keras" 
 CLASSES_PATH = "class_names.pkl"
 
-print(f"Текущая папка: {os.getcwd()}")
-print(f"Файлы в папке: {os.listdir()}")
-
-if os.path.exists(MODEL_FILE):
-    print("Файл модели найден. Загружаю...")
-    try:
-        model = tf.keras.models.load_model(MODEL_FILE)
-        print(" Модель успешно загружена в память!")
-    except Exception as e:
-        print(f"❌ Ошибка при чтении файла модели: {e}")
-        model = None
-else:
-    print(f"❌ ОШИБКА: Файл '{MODEL_FILE}' НЕ НАЙДЕН в папке приложения.")
-    model = None
-
-if os.path.exists(CLASSES_FILE):
-    with open(CLASSES_FILE, "rb") as f:
+print("Loading model...")
+try:
+    model = tf.keras.models.load_model(MODEL_PATH)
+    with open(CLASSES_PATH, "rb") as f:
         class_names = pickle.load(f)
-else:
-    print(f"Файл классов '{CLASSES_FILE}' не найден. Использую заглушку.")
-    class_names = [f"Class {i}" for i in range(75)]
+    print("Successfully!")
+except Exception as e:
+    print(f"Loading error: {e}")
+    class_names = ["error: files not found"]
+
 
 def classify_butterfly(image):
     if image is None: return None
