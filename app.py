@@ -4,7 +4,7 @@ import pickle
 import numpy as np
 import os
 
-MODEL_PATH = "butterfly_model_94acc.keras" 
+MODEL_PATH = "butterfly_model_94_44acc.keras" 
 CLASSES_PATH = "class_names.pkl"
 
 print(f"Текущая папка: {os.getcwd()}")
