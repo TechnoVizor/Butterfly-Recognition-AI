@@ -4,8 +4,8 @@ import pickle
 import numpy as np
 import os
 
-MODEL_PATH = "butterfly_model_94_44acc.keras" 
-CLASSES_PATH = "class_names.pkl"
+MODEL_PATH = "/model/butterfly_model_94_44acc.keras" 
+CLASSES_PATH = "/model/class_names.pkl"
 
 print("Loading model...")
 try:
@@ -47,5 +47,4 @@ with gr.Blocks(title="Butterfly AI") as demo:
     
     btn.click(classify_butterfly, inputs=input_img, outputs=output)
 
-# Запуск
 demo.launch()
