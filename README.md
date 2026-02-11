@@ -12,11 +12,11 @@ Try the model yourself without installation:
 👉 **[Click here to open the App on Hugging Face](https://huggingface.co/spaces/IljaTech/Butterfly-Recognizer)**
 
 ### How it works
-![Demo Animation](butterfly.gif)
+![Demo Animation](/public/butterfly.gif)
 *(Upload an image of a butterfly, and the model predicts the species with a confidence score)*
 
 ## 📊 Interface Screenshot
-![App Screenshot](butterfly.png)
+![App Screenshot](/public/butterfly.png)
 
 ## 🧠 Project Overview
 
